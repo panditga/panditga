@@ -1,5 +1,5 @@
 Hello everyone
-my firsc project
+my first project
 
 <!---
 panditga/panditga is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
