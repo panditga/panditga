@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doctor Appointment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      select {
+        width: 300px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .message {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Doctor Appointment</h2>
+    <form id="appointmentForm">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" required />
+      </div>
+      <div>
+        <label for="date">Appointment Date:</label>
+        <input type="date" id="date" required />
+      </div>
+      <div>
+        <label for="time">Appointment Time:</label>
+        <input type="time" id="time" required />
+      </div>
+      <div>
+        <label for="reason">Reason for Visit:</label>
+        <textarea id="reason" rows="4" required></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Book Appointment" />
+      </div>
+    </form>
+    <div id="message" class="message"></div>
+
+    <script>
+      document
+        .getElementById("appointmentForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var phone = document.getElementById("phone").value;
+          var date = document.getElementById("date").value;
+          var time = document.getElementById("time").value;
+          var reason = document.getElementById("reason").value;
+
+          // Perform validation or further processing if needed
+
+          // Example code to display a success message
+          var messageElement = document.getElementById("message");
+          messageElement.innerHTML =
+            "Appointment booked successfully for " +
+            name +
+            " on " +
+            date +
+            " at " +
+            time +
+            ". We will contact you at " +
+            email +
+            " or " +
+            phone +
+            " for any further updates.";
+          messageElement.style.color = "green";
+        });
+    </script>
+  </body>
+</html>
